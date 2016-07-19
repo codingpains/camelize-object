@@ -1,2 +1,2 @@
-# camelize-object
-Changes all properties to camel case
+# Camelobj
+Changes all properties to camel case, except for the provided exceptions.
