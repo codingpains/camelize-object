@@ -1,6 +1,6 @@
 {
   "name": "camelobj",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "Changes all properties to camel case",
   "main": "index.js",
   "scripts": {
