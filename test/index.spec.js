@@ -3,7 +3,7 @@ const camelobj = require('./../index');
 
 suite('camelobj object', (test) => {
   test('Returns same value if input is not an object', (assert) => {
-    [1, 'hola', true, [{a: 1}], new Date()].forEach(input => {
+    [1, 'hola', true, new Date()].forEach(input => {
       const out = camelobj(input);
       assert('equal', out, input);
     });
@@ -71,5 +71,12 @@ suite('camelobj object', (test) => {
     const out = camelobj(input);
     assert('equal', out.postIds[0], '1');
     assert('equal', out.postIds[1], '2');
+  });
+
+  test('Camelizes arrays', (assert) => {
+    const input = [{foo_bar: 'baz'}, {hoge_kage: 'piyo'}];
+    const out = camelobj(input);
+    assert('equal', out[0].fooBar, 'baz');
+    assert('equal', out[1].hogeKage, 'piyo');
   });
 });
