@@ -2,6 +2,7 @@ const camelCase = require('camelcase');
 const isPlainObject = require('is-plain-object');
 
 const camelizeObject = (data, exceps) => {
+  if (Array.isArray(data)) return data.map(item => camelizeObject(item));
   if (!isPlainObject(data)) return data;
 
   return Object.keys(data).reduce((result, key) => {
