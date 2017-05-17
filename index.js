@@ -13,7 +13,7 @@ const camelizeObject = (data, exceps) => {
   }, {});
 };
 
-const isException = (key, exceps) => exceps.includes(key);
+const isException = (key, exceps) => exceps.indexOf(key) > -1;
 
 const camelDeepObject = (newKey, result, data, exceps) => {
   const func = () => camelizeObject(data, exceps);
